@@ -8,9 +8,9 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-ReactDOM.render(
+ReactDOM.render((
     <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
         <App />
-    </MuiThemeProvider>,
+    </MuiThemeProvider>),
     document.getElementById('root')
 );

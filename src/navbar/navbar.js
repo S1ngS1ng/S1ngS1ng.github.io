@@ -1,11 +1,11 @@
 import React from 'react';
-import Link from 'react-router';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
-import RaisedButton from 'material-ui/RaisedButton';
 import FontIcon from 'material-ui/FontIcon';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
+import AppBar from 'material-ui/AppBar';
+
 
 export default class Navbar extends React.Component {
     constructor(props) {
@@ -19,10 +19,10 @@ export default class Navbar extends React.Component {
     render() {
         return (
             <div>
-                <RaisedButton
-                    label="Open Drawer"
-                    onTouchTap={this.handleToggle}
-                />
+                <AppBar
+                    onLeftIconButtonTouchTap={this.handleToggle.bind(this)}
+                    title="S1ngS1ng">
+                </AppBar>
                 <Drawer
                     docked={false}
                     open={this.state.open}
@@ -37,7 +37,7 @@ export default class Navbar extends React.Component {
                         <CardMedia
                             overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
                         >
-                            <img src="./back.jpg"/>
+                            <img src="./back.jpg" alt="img"/>
                         </CardMedia>
                         <CardTitle title="Card title" subtitle="Card subtitle" />
                         <CardText>
@@ -54,6 +54,7 @@ export default class Navbar extends React.Component {
                     <MenuItem
                         onTouchTap={this.closeNav.bind(this)}
                         primaryText="Home"
+                        href="#/"
                         leftIcon={
                             <FontIcon className="muidocs-icon-action-home" />
                         }>
@@ -61,6 +62,7 @@ export default class Navbar extends React.Component {
                     <MenuItem
                         onTouchTap={this.closeNav.bind(this)}
                         primaryText="Blog"
+                        href="http://singsing.io/blog"
                         leftIcon={
                             <FontIcon className="muidocs-icon-action-home" />
                         }>
@@ -68,6 +70,7 @@ export default class Navbar extends React.Component {
                     <MenuItem
                         onTouchTap={this.closeNav.bind(this)}
                         primaryText="Music"
+                        href="#/music"
                         leftIcon={
                             <FontIcon className="muidocs-icon-action-home" />
                         }>
@@ -75,6 +78,7 @@ export default class Navbar extends React.Component {
                     <MenuItem
                         onTouchTap={this.closeNav.bind(this)}
                         primaryText="Apps"
+                        href="#/apps"
                         leftIcon={
                             <FontIcon className="muidocs-icon-action-home" />
                         }>
